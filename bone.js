@@ -1,5 +1,6 @@
 /**
- * Created by huangzhichao on 2015/10/28.
+ * Bone.js 0.0.1
+ * (c) 2010-2015 zechau
  *
  * a small JS framework providing model + view
  * this project is inspired by Backbone.js
