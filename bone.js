@@ -16,7 +16,7 @@
     // Current version of the library. Keep in sync with `package.json`.
     Bone.VERSION = '0.0.1';
 
-    // Runs Backbone.js in *noConflict* mode, returning the `Backbone` variable
+    // Runs Bone.js in *noConflict* mode, returning the `Bone` variable
     // to its previous owner. Returns a reference to this Backbone object.
     Bone.noConflict = function() {
         root.Bone = previousBone;
