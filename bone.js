@@ -112,7 +112,8 @@
 
     Bone.Model.extend = Bone.View.extend = function(protoProps){
         var parent = this,
-            child;
+            child,
+            k;
 
         if (protoProps && protoProps.hasOwnProperty('constructor')) {
             child = protoProps.constructor;
@@ -121,16 +122,16 @@
         }
 
         //copy static properties
-        for(var k in parent){
-            child[k] = parent[k];
+        for(k in parent){
+            parent.hasOwnProperty(k) && (child[k] = parent[k]);
         }
 
         for(k in parent.prototype){
-            child.prototype[k] = parent.prototype[k];
+            parent.prototype.hasOwnProperty(k) && (child.prototype[k] = parent.prototype[k]);
         }
 
         for(k in protoProps){
-            child.prototype[k] = protoProps[k];
+            protoProps.hasOwnProperty(k) && (child.prototype[k] = protoProps[k]);
         }
     }
 
