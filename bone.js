@@ -133,6 +133,12 @@
         for(k in protoProps){
             protoProps.hasOwnProperty(k) && (child.prototype[k] = protoProps[k]);
         }
+        
+        // Set a convenience property in case the parent's prototype is needed
+        // later.
+        child.__super__ = parent.prototype;
+
+        return child;
     }
 
     return Bone;
